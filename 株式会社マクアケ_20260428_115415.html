@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>株式会社マクアケ様 ご提案資料 | Bekkai</title>
+<style>
+@font-face { font-family:'NotoJP'; font-weight:400; src: local('Noto Sans CJK JP'), url('file:///usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc') format('truetype'); }
+@font-face { font-family:'NotoJP'; font-weight:500; src: local('Noto Sans CJK JP Medium'), url('file:///usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc') format('truetype'); }
+@font-face { font-family:'NotoJP'; font-weight:700; src: local('Noto Sans CJK JP Bold'), url('file:///usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc') format('truetype'); }
+@font-face { font-family:'NotoJP'; font-weight:900; src: local('Noto Sans CJK JP Black'), url('file:///usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc') format('truetype'); }
+
+:root {
+  --blue: #2C5282;
+  --blue-deep: #1A365D;
+  --blue-soft: #EBF1F8;
+  --coral: #E53E3E;
+  --coral-soft: #FFF5F5;
+  --black: #2D3748;
+  --gray: #718096;
+  --gray-light: #E2E8F0;
+  --bg: #FAFBFC;
+  --white: #FFFFFF;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:'NotoJP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic',sans-serif;
+  font-weight:400;
+  color:var(--black);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt";
+  letter-spacing:0.02em;
+}
+
+.page {
+  width:1280px;
+  height:720px;
+  margin:24px auto;
+  background:var(--white);
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+}
+
+/* ===== Common header / footer ===== */
+.page-head {
+  position:absolute;
+  top:32px;
+  left:56px;
+  right:56px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+}
+.head-num {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0.18em;
+  color:var(--gray);
+}
+.head-num .pg { color:var(--coral); font-weight:700; }
+.head-num .bar { width:24px; height:1px; background:var(--gray-light); }
+.head-label {
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0.18em;
+  color:var(--gray);
+  text-transform:uppercase;
+}
+
+.page-foot {
+  position:absolute;
+  bottom:24px;
+  left:56px;
+  right:56px;
+  display:flex;
+  justify-content:space-between;
+  font-size:10px;
+  color:var(--gray);
+  letter-spacing:0.1em;
+}
+
+/* ===== Slide 1: Cover ===== */
+.s1 { background: linear-gradient(135deg, #1A365D 0%, #2C5282 100%); color:var(--white); }
+.s1 .page-head { color:rgba(255,255,255,0.7); }
+.s1 .head-num,.s1 .head-label { color:rgba(255,255,255,0.6); }
+.s1 .head-num .pg { color:#FBD38D; }
+.s1 .head-num .bar { background:rgba(255,255,255,0.25); }
+.s1 .page-foot { color:rgba(255,255,255,0.5); }
+
+.s1-deco {
+  position:absolute;
+  top:0; right:0;
+  width:520px; height:100%;
+  opacity:0.06;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 28px, #fff 28px 29px);
+  pointer-events:none;
+}
+.s1-accent {
+  position:absolute;
+  top:50%; left:56px;
+  width:64px; height:3px;
+  background:var(--coral);
+  transform:translateY(-110px);
+}
+
+.s1-content {
+  position:absolute;
+  top:50%; left:56px;
+  transform:translateY(-50%);
+  max-width:880px;
+}
+.s1-eyebrow {
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:0.3em;
+  color:rgba(255,255,255,0.7);
+  margin-bottom:24px;
+}
+.s1-company {
+  font-size:64px;
+  font-weight:700;
+  line-height:1.15;
+  letter-spacing:0.02em;
+  margin-bottom:20px;
+}
+.s1-company .sama { font-size:32px; font-weight:400; opacity:0.7; margin-left:8px; }
+.s1-tagline {
+  font-size:18px;
+  font-weight:400;
+  line-height:1.7;
+  color:rgba(255,255,255,0.85);
+  max-width:680px;
+  margin-bottom:64px;
+}
+.s1-meta {
+  display:flex;
+  gap:48px;
+  font-size:13px;
+  color:rgba(255,255,255,0.7);
+}
+.s1-meta .lbl { font-size:10px; letter-spacing:0.2em; opacity:0.6; margin-bottom:4px; }
+.s1-meta .val { font-weight:500; color:#fff; }
+
+/* ===== Slide 2: Observation ===== */
+.s2-content {
+  position:absolute;
+  top:96px; left:56px; right:56px; bottom:64px;
+  display:flex;
+  flex-direction:column;
+}
+.s-title {
+  font-size:32px;
+  font-weight:700;
+  color:var(--blue-deep);
+  letter-spacing:0.04em;
+  margin-bottom:8px;
+}
+.s-title .accent { color:var(--coral); }
+.s-lead {
+  font-size:14px;
+  font-weight:400;
+  color:var(--gray);
+  line-height:1.8;
+  margin-bottom:36px;
+  max-width:920px;
+}
+.s-divider {
+  width:48px;
+  height:3px;
+  background:var(--coral);
+  margin:0 0 28px 0;
+}
+
+.obs-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  align-items:stretch;
+}
+.obs-card {
+  background:var(--white);
+  border:1px solid var(--gray-light);
+  border-top:3px solid var(--blue);
+  padding:28px 24px 32px 24px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  min-height:280px;
+}
+.obs-card .obs-num {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  color:var(--coral);
+  margin-bottom:14px;
+}
+.obs-card .obs-title {
+  font-size:18px;
+  font-weight:700;
+  color:var(--black);
+  line-height:1.5;
+  margin-bottom:14px;
+  min-height:54px;
+}
+.obs-card .obs-detail {
+  font-size:13px;
+  font-weight:400;
+  color:var(--gray);
+  line-height:1.85;
+  flex:1;
+}
+
+/* ===== Slide 3: Hypothesis ===== */
+.s3-content {
+  position:absolute;
+  top:96px; left:56px; right:56px; bottom:64px;
+  display:flex;
+  flex-direction:column;
+}
+.funnel-wrap {
+  margin-top: 12px;
+  margin-bottom: 14px;
+  width: 100%;
+}
+.funnel-svg {
+  width: 100%;
+  height: auto;
+  max-height: 145px;
+  display: block;
+}
+
+.s3-grid {
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:24px;
+  flex:1;
+  margin-top:8px;
+}
+.main-card {
+  background: linear-gradient(135deg, #FFF5F5 0%, #FED7D7 100%);
+  border-left:5px solid var(--coral);
+  padding:22px 28px 20px 28px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+.main-card::before {
+  content:'?';
+  position:absolute;
+  top:14px; right:24px;
+  font-size:80px;
+  font-weight:900;
+  color:var(--coral);
+  opacity:0.08;
+  line-height:1;
+  font-family:'NotoJP',sans-serif;
+}
+.main-card .mc-tag {
+  display:inline-block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  color:var(--coral);
+  background:var(--white);
+  padding:4px 10px;
+  border-radius:2px;
+  margin-bottom:12px;
+  align-self:flex-start;
+}
+.main-card .mc-title {
+  font-size:21px;
+  font-weight:700;
+  color:var(--blue-deep);
+  line-height:1.35;
+  margin-bottom:12px;
+  letter-spacing:0.02em;
+}
+.main-card .mc-detail {
+  font-size:12.5px;
+  font-weight:400;
+  color:var(--black);
+  line-height:1.75;
+  flex:1;
+}
+
+.sub-stack { display:flex; flex-direction:column; gap:14px; }
+.sub-card {
+  background:var(--white);
+  border:1px solid var(--gray-light);
+  padding:16px 20px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.sub-card .sc-tag {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  color:var(--blue);
+  margin-bottom:6px;
+}
+.sub-card .sc-text {
+  font-size:12px;
+  font-weight:500;
+  color:var(--black);
+  line-height:1.6;
+}
+
+/* ===== Slide 4: Approach ===== */
+.s4-content {
+  position:absolute;
+  top:96px; left:56px; right:56px; bottom:64px;
+  display:flex;
+  flex-direction:column;
+}
+.ba-wrap {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+.ba-svg {
+  width: 100%;
+  height: auto;
+  max-height: 130px;
+  display: block;
+}
+
+.str-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:18px;
+}
+.str-card {
+  background:var(--blue-soft);
+  padding:18px 18px;
+  border-radius:4px;
+  position:relative;
+}
+.str-card .st-num {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  color:var(--blue);
+  margin-bottom:8px;
+}
+.str-card .st-title {
+  font-size:14px;
+  font-weight:700;
+  color:var(--blue-deep);
+  margin-bottom:8px;
+  line-height:1.45;
+}
+.str-card .st-text {
+  font-size:11.5px;
+  font-weight:400;
+  color:var(--black);
+  line-height:1.65;
+}
+
+.kpi-row {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.kpi-card {
+  background: linear-gradient(135deg, #2C5282 0%, #1A365D 100%);
+  color:var(--white);
+  padding:16px 20px;
+  border-radius:4px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.kpi-card .kpi-bar { width:3px; height:38px; background:var(--coral); }
+.kpi-card .kpi-value {
+  font-size:28px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:0;
+}
+.kpi-card .kpi-unit {
+  font-size:11px;
+  font-weight:500;
+  opacity:0.85;
+  margin-left:3px;
+}
+.kpi-card .kpi-label {
+  font-size:10px;
+  font-weight:400;
+  color:rgba(255,255,255,0.78);
+  margin-top:4px;
+  line-height:1.5;
+}
+.kpi-card .kpi-text { flex:1; }
+
+/* ===== Slide 5: Next Step ===== */
+.s5-content {
+  position:absolute;
+  top:96px; left:56px; right:56px; bottom:64px;
+  display:flex;
+  flex-direction:column;
+}
+.step-row {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  margin-top:24px;
+  margin-bottom:36px;
+  position:relative;
+}
+.step-row::before {
+  content:'';
+  position:absolute;
+  top:32px;
+  left:8%; right:8%;
+  height:1px;
+  background:repeating-linear-gradient(90deg, var(--gray-light) 0 6px, transparent 6px 12px);
+  z-index:1;
+}
+.step-card {
+  text-align:center;
+  position:relative;
+  z-index:2;
+  padding:0 12px;
+}
+.step-card .step-circle {
+  width:64px; height:64px;
+  border-radius:50%;
+  background:var(--white);
+  border:2px solid var(--blue);
+  color:var(--blue);
+  font-size:22px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 16px;
+}
+.step-card.active .step-circle {
+  background:var(--coral);
+  border-color:var(--coral);
+  color:var(--white);
+}
+.step-card .step-title {
+  font-size:15px;
+  font-weight:700;
+  color:var(--blue-deep);
+  margin-bottom:8px;
+}
+.step-card .step-text {
+  font-size:12px;
+  font-weight:400;
+  color:var(--gray);
+  line-height:1.7;
+  max-width:280px;
+  margin:0 auto;
+}
+
+.cta-block {
+  background:var(--blue-deep);
+  color:var(--white);
+  padding:24px 32px;
+  border-radius:4px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:auto;
+  gap:24px;
+}
+.cta-left { flex:1; }
+.cta-block .cta-text {
+  font-size:14px;
+  font-weight:500;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+.cta-block .cta-text strong { color:#FBD38D; font-weight:700; }
+
+.cta-button {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--coral);
+  color:var(--white);
+  text-decoration:none;
+  padding:11px 22px;
+  border-radius:3px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.04em;
+  transition:background 0.2s;
+}
+.cta-button:hover { background:#C53030; }
+.cta-button .arrow {
+  font-size:14px;
+  font-weight:400;
+}
+.cta-block .cta-contact {
+  text-align:right;
+  border-left:1px solid rgba(255,255,255,0.2);
+  padding-left:28px;
+  flex-shrink:0;
+}
+.cta-block .cc-name {
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:4px;
+}
+.cta-block .cc-mail {
+  font-size:11px;
+  font-weight:400;
+  color:rgba(255,255,255,0.8);
+  letter-spacing:0.05em;
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<div class="page s1">
+  <div class="s1-deco"></div>
+  <div class="s1-accent"></div>
+  <div class="page-head">
+    <div class="head-num"><span class="pg">01</span><span class="bar"></span><span>05</span></div>
+    <div class="head-label">PROPOSAL</div>
+  </div>
+  <div class="s1-content">
+    <div class="s1-eyebrow">SALES SUPPORT PROPOSAL</div>
+    <div class="s1-company">株式会社マクアケ<span class="sama">様</span></div>
+    <div class="s1-tagline">BtoBメーカーとして技術・製品力を強みに事業を展開されている貴社の、新規開拓チャネル構築に向けたご提案</div>
+    <div class="s1-meta">
+      <div><div class="lbl">PROPOSED BY</div><div class="val">株式会社Bekkai</div></div>
+      <div><div class="lbl">CONTACT</div><div class="val">角 翔平</div></div>
+      <div><div class="lbl">DATE</div><div class="val">2026年4月28日</div></div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>株式会社マクアケ様 ご提案資料</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 2: OBSERVATION ============ -->
+<div class="page">
+  <div class="page-head">
+    <div class="head-num"><span class="pg">02</span><span class="bar"></span><span>05</span></div>
+    <div class="head-label">OBSERVATION — 御社の現状を読み解く</div>
+  </div>
+  <div class="s2-content">
+    <h2 class="s-title">御社の現状を、<span class="accent">3つの視点</span>から読み解く。</h2>
+    <div class="s-divider"></div>
+    <p class="s-lead">求人票・HP・直近の事業状況から、御社の現在地を3つの視点で整理しました。</p>
+    <div class="obs-grid">
+      <div class="obs-card">
+        <div class="obs-num">OBSERVATION 01</div>
+        <div class="obs-title">技術・製品中心の事業基盤</div>
+        <div class="obs-detail">株式会社マクアケ様は独自の製造技術や品質管理体制を強みとされている企業と拝見しました。技術力が競合との差別化の核となる、BtoBメーカーらしい事業構造です。</div>
+      </div>
+      <div class="obs-card">
+        <div class="obs-num">OBSERVATION 02</div>
+        <div class="obs-title">営業職の採用で営業強化を計画</div>
+        <div class="obs-detail">求人票から、技術営業もしくは新規開拓営業のポジションを開いている様子が読み取れます。展示会や代理店経由に頼らない、能動的な開拓チャネル構築のフェーズと推察されます。</div>
+      </div>
+      <div class="obs-card">
+        <div class="obs-num">OBSERVATION 03</div>
+        <div class="obs-title">間接販売と直販のバランス</div>
+        <div class="obs-detail">BtoBメーカーは商社・代理店経由の販路が中心になりがちですが、エンドユーザーとの直接接点を作ることで価格競争を避け、技術価値を直接届ける営業構造を作る余地があります。</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>株式会社マクアケ様 ご提案資料</span>
+    <span>Bekkai | Confidential</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 3: HYPOTHESIS ============ -->
+<div class="page">
+  <div class="page-head">
+    <div class="head-num"><span class="pg">03</span><span class="bar"></span><span>05</span></div>
+    <div class="head-label">HYPOTHESIS — 仮説：いま起きているボトルネック</div>
+  </div>
+  <div class="s3-content">
+    <h2 class="s-title">そこから生まれる、<span class="accent">営業の"詰まり"</span>。</h2>
+    <div class="s-divider"></div>
+    <p class="s-lead">観察を踏まえると、御社の営業組織は"次の壁"に差し掛かっているのではないでしょうか。</p>
+
+    <!-- 営業ファネル図解 -->
+    <div class="funnel-wrap">
+      <svg class="funnel-svg" viewBox="0 0 1100 165" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <!-- ステージ1: リスト -->
+        <polygon points="20,30 250,30 230,135 40,135" fill="#EBF1F8" stroke="#2C5282" stroke-width="1.5"/>
+        <text x="135" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D" font-family="NotoJP, sans-serif">①リスト</text>
+        <text x="135" y="100" text-anchor="middle" font-size="10" fill="#718096" font-family="NotoJP, sans-serif">ターゲット選定</text>
+        <!-- 矢印1 -->
+        <polygon points="262,75 280,67 280,73 295,73 295,92 280,92 280,98" fill="#CBD5E0"/>
+
+        <!-- ステージ2: アプローチ (詰まりポイント・赤強調) -->
+        <polygon points="310,30 540,30 525,135 325,135" fill="#FFF5F5" stroke="#E53E3E" stroke-width="2.5"/>
+        <text x="425" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#E53E3E" font-family="NotoJP, sans-serif">②アプローチ</text>
+        <text x="425" y="89" text-anchor="middle" font-size="10" fill="#718096" font-family="NotoJP, sans-serif">架電・配信</text>
+        <!-- 詰まりインジケータ -->
+        <circle cx="425" cy="115" r="11" fill="#E53E3E"/>
+        <text x="425" y="120" text-anchor="middle" font-size="13" font-weight="900" fill="#FFFFFF" font-family="NotoJP, sans-serif">!</text>
+        <!-- 矢印2 -->
+        <polygon points="552,75 570,67 570,73 585,73 585,92 570,92 570,98" fill="#CBD5E0"/>
+
+        <!-- ステージ3: 商談 -->
+        <polygon points="600,30 815,30 800,135 615,135" fill="#EBF1F8" stroke="#2C5282" stroke-width="1.5" opacity="0.55"/>
+        <text x="707" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D" font-family="NotoJP, sans-serif" opacity="0.65">③商談</text>
+        <text x="707" y="100" text-anchor="middle" font-size="10" fill="#718096" font-family="NotoJP, sans-serif" opacity="0.65">ヒアリング・提案</text>
+        <!-- 矢印3 -->
+        <polygon points="827,75 845,67 845,73 860,73 860,92 845,92 845,98" fill="#CBD5E0" opacity="0.5"/>
+
+        <!-- ステージ4: 受注 -->
+        <polygon points="875,30 1080,30 1062,135 887,135" fill="#EBF1F8" stroke="#2C5282" stroke-width="1.5" opacity="0.35"/>
+        <text x="977" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D" font-family="NotoJP, sans-serif" opacity="0.45">④受注</text>
+        <text x="977" y="100" text-anchor="middle" font-size="10" fill="#718096" font-family="NotoJP, sans-serif" opacity="0.45">クロージング</text>
+
+        <!-- 詰まり指摘ラベル -->
+        <line x1="425" y1="148" x2="425" y2="158" stroke="#E53E3E" stroke-width="1.5"/>
+        <text x="425" y="161" text-anchor="middle" font-size="11" font-weight="700" fill="#E53E3E" font-family="NotoJP, sans-serif">ここで"詰まり"が発生</text>
+      </svg>
+    </div>
+
+    <div class="s3-grid">
+      <div class="main-card">
+        <span class="mc-tag">CORE BOTTLENECK</span>
+        <div class="mc-title">新規開拓の<br>専任がいない</div>
+        <div class="mc-detail">既存の代理店・展示会経由の受注に依存しており、能動的な新規開拓が手薄になっている可能性があります。営業担当が生産管理や納品対応を兼務しているケースも少なくありません。</div>
+      </div>
+      <div class="sub-stack">
+        <div class="sub-card">
+          <div class="sc-tag">DERIVATIVE 01</div>
+          <div class="sc-text">ターゲット企業の絞り込み不足 取引可能な業種は多岐にわたりますが、受注確度の高い業種・企業規模・地域の優先順位が整理されていない可能性があります。</div>
+        </div>
+        <div class="sub-card">
+          <div class="sc-tag">DERIVATIVE 02</div>
+          <div class="sc-text">トーク・提案の型が属人化 ベテラン営業の人脈と技術知識に依存しており、若手への引き継ぎが進んでいない可能性があります。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>株式会社マクアケ様 ご提案資料</span>
+    <span>Bekkai | Confidential</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 4: APPROACH ============ -->
+<div class="page">
+  <div class="page-head">
+    <div class="head-num"><span class="pg">04</span><span class="bar"></span><span>05</span></div>
+    <div class="head-label">APPROACH — Bekkaiの動き方</div>
+  </div>
+  <div class="s4-content">
+    <h2 class="s-title">この詰まりに、<span class="accent">Bekkaiはこう動く</span>。</h2>
+    <div class="s-divider"></div>
+    <p class="s-lead">Bekkaiは「リスト精査・文面設計・反響対応」の3点で、御社の営業実行機能を即日代替します。</p>
+
+    <!-- Before/After 対比図 -->
+    <div class="ba-wrap">
+      <svg class="ba-svg" viewBox="0 0 1100 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <!-- BEFOREパネル -->
+        <text x="20" y="22" font-size="11" font-weight="700" fill="#718096" font-family="NotoJP, sans-serif" letter-spacing="2">BEFORE</text>
+        <text x="100" y="22" font-size="11" font-weight="500" fill="#A0AEC0" font-family="NotoJP, sans-serif">— 現状の営業実行</text>
+
+        <!-- BEFORE: ばらばらの矢印・空白 -->
+        <rect x="20" y="32" width="450" height="68" fill="#FFF5F5" stroke="#FED7D7" stroke-width="1" rx="4"/>
+        <!-- 詰まったパイプ表現 -->
+        <rect x="40" y="56" width="80" height="20" fill="#CBD5E0" rx="2"/>
+        <text x="80" y="70" text-anchor="middle" font-size="9" fill="#4A5568" font-family="NotoJP, sans-serif">リスト</text>
+        
+        <line x1="125" y1="66" x2="155" y2="66" stroke="#A0AEC0" stroke-width="1.5" stroke-dasharray="3,2"/>
+        
+        <rect x="160" y="56" width="80" height="20" fill="#FED7D7" stroke="#E53E3E" stroke-width="1.5" rx="2"/>
+        <text x="200" y="70" text-anchor="middle" font-size="9" fill="#E53E3E" font-weight="700" font-family="NotoJP, sans-serif">アプローチ</text>
+        <!-- 詰まりマーク -->
+        <text x="252" y="71" font-size="14" font-weight="900" fill="#E53E3E" font-family="NotoJP, sans-serif">×</text>
+        
+        <line x1="265" y1="66" x2="295" y2="66" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.4"/>
+        
+        <rect x="300" y="56" width="80" height="20" fill="#E2E8F0" stroke="#CBD5E0" stroke-width="1" rx="2" opacity="0.5"/>
+        <text x="340" y="70" text-anchor="middle" font-size="9" fill="#A0AEC0" font-family="NotoJP, sans-serif" opacity="0.7">商談</text>
+        
+        <line x1="385" y1="66" x2="395" y2="66" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.3"/>
+        
+        <rect x="400" y="56" width="55" height="20" fill="#E2E8F0" stroke="#CBD5E0" stroke-width="1" rx="2" opacity="0.3"/>
+        <text x="427" y="70" text-anchor="middle" font-size="9" fill="#A0AEC0" font-family="NotoJP, sans-serif" opacity="0.6">受注</text>
+
+        <!-- 矢印中央 -->
+        <g transform="translate(485,55)">
+          <circle cx="20" cy="11" r="20" fill="#2C5282"/>
+          <path d="M 13 11 L 27 11 M 22 6 L 27 11 L 22 16" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="505" y="92" text-anchor="middle" font-size="9" font-weight="700" fill="#2C5282" font-family="NotoJP, sans-serif">Bekkai</text>
+
+        <!-- AFTERパネル -->
+        <text x="540" y="22" font-size="11" font-weight="700" fill="#2C5282" font-family="NotoJP, sans-serif" letter-spacing="2">AFTER</text>
+        <text x="620" y="22" font-size="11" font-weight="500" fill="#718096" font-family="NotoJP, sans-serif">— Bekkai導入後</text>
+
+        <rect x="540" y="32" width="540" height="68" fill="#EBF1F8" stroke="#BEE3F8" stroke-width="1" rx="4"/>
+        <!-- 流れるパイプ -->
+        <rect x="560" y="56" width="80" height="20" fill="#2C5282" rx="2"/>
+        <text x="600" y="70" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700" font-family="NotoJP, sans-serif">リスト精査</text>
+        
+        <line x1="645" y1="66" x2="675" y2="66" stroke="#2C5282" stroke-width="2"/>
+        <polygon points="675,66 670,62 670,70" fill="#2C5282"/>
+        
+        <rect x="680" y="56" width="80" height="20" fill="#2C5282" rx="2"/>
+        <text x="720" y="70" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700" font-family="NotoJP, sans-serif">文面設計</text>
+        
+        <line x1="765" y1="66" x2="795" y2="66" stroke="#2C5282" stroke-width="2"/>
+        <polygon points="795,66 790,62 790,70" fill="#2C5282"/>
+        
+        <rect x="800" y="56" width="80" height="20" fill="#2C5282" rx="2"/>
+        <text x="840" y="70" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700" font-family="NotoJP, sans-serif">反響対応</text>
+        
+        <line x1="885" y1="66" x2="915" y2="66" stroke="#2C5282" stroke-width="2"/>
+        <polygon points="915,66 910,62 910,70" fill="#2C5282"/>
+        
+        <rect x="920" y="56" width="60" height="20" fill="#E53E3E" rx="2"/>
+        <text x="950" y="70" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700" font-family="NotoJP, sans-serif">商談</text>
+        
+        <line x1="985" y1="66" x2="995" y2="66" stroke="#E53E3E" stroke-width="2"/>
+        <polygon points="995,66 990,62 990,70" fill="#E53E3E"/>
+        
+        <rect x="1000" y="56" width="60" height="20" fill="#E53E3E" rx="2"/>
+        <text x="1030" y="70" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700" font-family="NotoJP, sans-serif">受注</text>
+      </svg>
+    </div>
+
+    <div class="str-grid">
+      <div class="str-card">
+        <div class="st-num">STRENGTH 01</div>
+        <div class="st-title">100万件超の自社リストから業種特化で精査</div>
+        <div class="st-text">御社のターゲット業種・規模に合わせ、業種タグ×採用動向×プレスリリース直近性で絞り込み。月1,000件の高精度リストを供給します。</div>
+      </div>
+      <div class="str-card">
+        <div class="st-num">STRENGTH 02</div>
+        <div class="st-title">構造化された型に沿った文面設計</div>
+        <div class="st-text">AI配信ツールとの差別化を徹底。要件定義書に基づく構造化文面で、テンプレ大量配信感を排除し開封率・返信率を高水準に維持します。</div>
+      </div>
+      <div class="str-card">
+        <div class="st-num">STRENGTH 03</div>
+        <div class="st-title">技術文脈を踏まえたエンドユーザー直販開拓</div>
+        <div class="st-text">代理店・商社経由の販路を補完する形で、エンドユーザー業種(購買・設計担当)への直接接点を創出。技術仕様や差別化ポイントを商談時に効率的に伝える運用を提供します。</div>
+      </div>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-bar"></div>
+        <div class="kpi-text">
+          <div><span class="kpi-value">1,000</span><span class="kpi-unit">件/月</span></div>
+          <div class="kpi-label">精査済みリストへの架電数</div>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-bar"></div>
+        <div class="kpi-text">
+          <div><span class="kpi-value">15</span><span class="kpi-unit">件/月</span></div>
+          <div class="kpi-label">目標アポイント獲得数</div>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-bar"></div>
+        <div class="kpi-text">
+          <div><span class="kpi-value">1.5</span><span class="kpi-unit">%</span></div>
+          <div class="kpi-label">目標アポ率（業界平均0.5-1%）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>株式会社マクアケ様 ご提案資料</span>
+    <span>Bekkai | Confidential</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 5: NEXT STEP ============ -->
+<div class="page">
+  <div class="page-head">
+    <div class="head-num"><span class="pg">05</span><span class="bar"></span><span>05</span></div>
+    <div class="head-label">NEXT STEP — まずは情報交換から</div>
+  </div>
+  <div class="s5-content">
+    <h2 class="s-title">まずは<span class="accent">30分の情報交換</span>から。</h2>
+    <div class="s-divider"></div>
+    <p class="s-lead">御社の営業状況とターゲット解像度を擦り合わせる場として、30分程度のお時間をいただけますと幸いです。</p>
+    <div class="step-row">
+      <div class="step-card active">
+        <div class="step-circle">1</div>
+        <div class="step-title">情報交換 (30分)</div>
+        <div class="step-text">御社の営業状況をお聞かせください。Bekkaiの事例も合わせてお見せします。</div>
+      </div>
+      <div class="step-card">
+        <div class="step-circle">2</div>
+        <div class="step-title">具体提案 (1〜2週間後)</div>
+        <div class="step-text">御社向けにカスタマイズした営業設計プランをお持ちします。</div>
+      </div>
+      <div class="step-card">
+        <div class="step-circle">3</div>
+        <div class="step-title">運用開始</div>
+        <div class="step-text">合意の上、初月からリスト精査・架電・反響管理を一貫運用。</div>
+      </div>
+    </div>
+    <div class="cta-block">
+      <div class="cta-left">
+        <div class="cta-text">まずは<strong>30分程度の情報交換</strong>のお時間をいただければ幸いです。事例資料の事前送付も可能です。</div>
+        <a href="https://timerex.net/s/kado_a4f9_9322/6cc03a23" class="cta-button" target="_blank" rel="noopener">
+          <span>30分の情報交換を予約する</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="cta-contact">
+        <div class="cc-name">株式会社Bekkai 角 翔平</div>
+        <div class="cc-mail">kado@bekkai.co.jp</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>株式会社マクアケ様 ご提案資料</span>
+    <span>Bekkai | Confidential</span>
+  </div>
+</div>
+
+</body>
+</html>
